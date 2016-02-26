@@ -23,7 +23,7 @@ Android Gradle Pluginでは *buildType* と *productFlavors* を使用するこ�
 Javaではテスト用にアクセス修飾子をパッケージプライベートにして、テストからアクセスできるようにすることがあります。
 Kotlinではパッケージプライベートが使えないため、internalで代用していました。
 
-例えば、デフォルトソースセットであるmain以下にinternalスコープのクラスもしくはプロパティが定義されているとします。
+例えば、mainソース以下にinternalスコープのクラスもしくはプロパティが定義されているとします。
 
 * `src/main/com/github/droibit/kotlin/internal/test/InternalClass.kt`
 
@@ -52,9 +52,10 @@ class InternalClassTest {
 ```
 
 `Cannot access 'InternalClass': it is 'internal' in 'test'`
+`Cannot access 'internalValue': it is 'internal' in 'InternalClass'`
 
-以上のようなビルド時にエラーが出ます。
-そのため、internalなアクセス修飾子がついているとテストが実行できません。
+ビルド時に以上のようなエラーが出ます。
+そのため、internalなアクセス修飾子がついているとテストが実行できないことがあります。
 
 #### テストパターン
 
