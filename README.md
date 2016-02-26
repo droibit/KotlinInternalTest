@@ -51,7 +51,7 @@ class InternalClassTest {
 }
 ```
 
-`Cannot access 'InternalClass': it is 'internal' in 'test'`
+`Cannot access 'InternalClass': it is 'internal' in 'test'`  
 `Cannot access 'internalValue': it is 'internal' in 'InternalClass'`
 
 ビルド時に以上のようなエラーが出ます。
@@ -61,7 +61,7 @@ class InternalClassTest {
 
 成功・失敗パターンは次のとおりです。
 
-*  app-buildtypesモジュール ... *buildVariants*
+*  app-buildtypesモジュール ... 対象: *buildVariants*
 
 |buildVariants| ビルドの成否|
 |----|----|
@@ -69,7 +69,7 @@ class InternalClassTest {
 |debugMock|×|
 |release|○|
 
-* app-flavorモジュール ... *productFlavors*
+* app-flavorモジュール ... 対象: *productFlavors*
 
 |buildVariants| ビルドの成否|
 |----|----|
