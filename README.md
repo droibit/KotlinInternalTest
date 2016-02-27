@@ -5,18 +5,14 @@
 
 Android Gradle Pluginでは *buildType* と *productFlavors* を使用することで特定の用途のビルド設定を記述することができます。
 
-例:
-
 * buildType ... debugビルド, releaseビルド
 * productFlavors ... devフレーバー、 productionフレーバー
 
 そして、 buildType × productFlavorsの組み合わせが *buildVariants* として選択できるようになります。
 
-例:
-
 * buildVariants ... devDebg, releaseProductionなど
 
-単体テストを実行する際には、何かしろの *buildVariants* を指定してます。
+Android Studioで単体テストを実行する際には、何かしろの *buildVariants* を指定する必要があります。
 
 ### 問題
 
@@ -58,6 +54,11 @@ class InternalClassTest {
 そのため、internalなアクセス修飾子がついているとテストが実行できないことがあります。
 
 #### テストパターン
+
+* 検証環境
+    * Android Studio 2.0 beta6
+    * Android Gradle Plugin 1.5.0
+    * Kotlin 1.0
 
 成功・失敗パターンは次のとおりです。
 
